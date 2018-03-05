@@ -3584,6 +3584,11 @@ var jsonata = (function() {
             "pattern-separator": ";"
         };
 
+        // undefined inputs always return undefined
+        if (typeof value === 'undefined') {
+            return undefined;
+        }
+
         // if `options` is specified, then its entries override defaults
         var properties = defaults;
         if(typeof options !== 'undefined') {
